@@ -35,19 +35,19 @@ public class ProductApiControllerTest {
 
     @Test
     public void testControllerMethodGet() throws Exception {
-        ResponseEntity responseEntity = productApiController.get((long) 2, "");
+        ResponseEntity responseEntity = productApiController.get(2L, "");
         assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
     }
 
     @Test
     public void testControllerMethodDelete() throws Exception {
-        ResponseEntity responseEntity = productApiController.delete((long) 2, "");
+        ResponseEntity responseEntity = productApiController.delete(2L, "");
         assertEquals(responseEntity.getStatusCode(), HttpStatus.BAD_REQUEST);
     }
 
     @Test
     public void testControllerMethodUpdate() throws Exception {
-        ResponseEntity responseEntity = productApiController.update((long) 2, "Name", "");
+        ResponseEntity responseEntity = productApiController.update(2L, "Name", "");
         assertEquals(responseEntity.getStatusCode(), HttpStatus.BAD_REQUEST);
     }
 

@@ -14,7 +14,7 @@ public class ProductApiBinding {
 
     public ApiResponseMessage<Product> get(Long productID) {
         Product product = new Product();
-        product.setIdentifier((long) 1);
+        product.setIdentifier(1L);
         product.setName("Baby Back Ribbs");
         return new ApiResponseMessage<>(HttpStatus.OK, "", product);
     }

@@ -18,11 +18,15 @@ import org.springframework.web.multipart.MultipartFile;
 public class ProductApiBinding  {
 
 
+
   public ApiResponseMessage<Product> delete(Long productID) {
       return new ApiResponseMessage<>(HttpStatus.INTERNAL_SERVER_ERROR, "not yet implemented", null);
   }
   public ApiResponseMessage<Product> get(Long productID) {
-      return new ApiResponseMessage<>(HttpStatus.NOT_FOUND, "", null);
+      Product product = new Product();
+      product.setIdentifier((long) 1);
+      product.setName("Product Name");
+      return new ApiResponseMessage<>(HttpStatus.OK, "", product);
   }
   public ApiResponseMessage<Product> update(Long productID, String productName) {
       return new ApiResponseMessage<>(HttpStatus.NOT_FOUND, "", null);

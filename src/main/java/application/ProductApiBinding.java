@@ -25,7 +25,7 @@ public class ProductApiBinding  {
   public ApiResponseMessage<Product> get(Long productID) {
       Product product = new Product();
       product.setIdentifier((long) 1);
-      product.setName("Product Name");
+      product.setName("Baby Back Ribbs");
       return new ApiResponseMessage<>(HttpStatus.OK, "", product);
   }
   public ApiResponseMessage<Product> update(Long productID, String productName) {

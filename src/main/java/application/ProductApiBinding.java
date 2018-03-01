@@ -1,9 +1,11 @@
 package application;
 
 //this is the class that binds to selected services
+
 import application.model.Product;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class ProductApiBinding {
@@ -13,9 +15,11 @@ public class ProductApiBinding {
     }
 
     public ApiResponseMessage<Product> get(Long productID) {
-        Product product = new Product();
-        product.setIdentifier(1L);
-        product.setName("Baby Back Ribbs");
+
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "https://93fbc6fb-4202-4913-8666-fb7fed1ab335-bluemix.cloudant.com/product/{productID}";
+        Product product = restTemplate.getForObject(url, Product.class, productID);
+
         return new ApiResponseMessage<>(HttpStatus.OK, "", product);
     }
 

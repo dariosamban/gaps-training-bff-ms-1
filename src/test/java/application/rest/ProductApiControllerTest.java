@@ -36,7 +36,7 @@ public class ProductApiControllerTest {
     @Test
     public void testControllerMethodGet() throws Exception {
         ResponseEntity responseEntity = productApiController.get(2L, "");
-        assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
+        assertEquals(responseEntity.getStatusCode(), HttpStatus.NOT_FOUND);
     }
 
     @Test
@@ -59,7 +59,7 @@ public class ProductApiControllerTest {
     @Test
     public void testEndpointResponseContent() throws Exception {
         mockMvc.perform(get("/product/1").accept("application/json")).andExpect(
-                content().json("{\n" + "   \"identifier\": 1,\n" + "   \"name\": \"Baby Back Ribbs\"\n" + "}"));
+                content().json("{\n" + "   \"identifier\": 1,\n" + "   \"name\": \"churro\"\n" + "}"));
     }
 
 }

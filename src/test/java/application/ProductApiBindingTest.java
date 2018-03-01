@@ -6,9 +6,6 @@ import org.springframework.http.HttpStatus;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by croci on 01/03/2018.
- */
 public class ProductApiBindingTest {
     private ProductApiBinding productApiBinding;
 
@@ -19,7 +16,11 @@ public class ProductApiBindingTest {
 
     @Test
     public void getCallShouldReturnOKStatus() throws Exception {
-        assertEquals(HttpStatus.OK, productApiBinding.get(001L).getCode());
+        assertEquals(HttpStatus.OK, productApiBinding.get(1L).getCode());
     }
 
+    @Test
+    public void getCallShouldReturnOneProduct() throws Exception {
+        assertNotNull(productApiBinding.get(1L).getData());
+    }
 }

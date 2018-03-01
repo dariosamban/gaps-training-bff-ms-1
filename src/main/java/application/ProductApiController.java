@@ -57,7 +57,7 @@ public class ProductApiController implements ProductApi {
         	return new ResponseEntity<Product>(result.getData(), result.getCode());
         }
 
-            return new ResponseEntity<Product>(HttpStatus.OK);
+            return new ResponseEntity<Product>(HttpStatus.NOT_FOUND);
     }
 
     public ResponseEntity<Product> update(@ApiParam(value = "Product ID",required=true ) @PathVariable("productID") Long productID,

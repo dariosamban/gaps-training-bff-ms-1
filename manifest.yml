@@ -2,10 +2,10 @@
 applications:
 - instances: 1
   timeout: 180
-  name: gapstrainingbffms1
+  name: gapstrainingbffms1-3
   buildpack: java_buildpack
   path: ./target/gapstrainingbffms1-1.0-SNAPSHOT.jar
-  memory: 256M
+  memory: 512M
   domain: mybluemix.net
   host: gaps-training-bff-ms-1-3
   env:
